@@ -86,7 +86,7 @@ public class CIT360 {
        do {
           System.out.print(".");
           try {
-              Thread.sleep(0);
+              Thread.sleep(100);
           }
           catch (InterruptedException exc) {
               exc.printStackTrace();
