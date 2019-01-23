@@ -55,7 +55,7 @@ class MyExecutorThread implements Runnable {
 public class CIT360 {
 
     public static void main(String[] args) {
-       System.out.println(Thread.currentThread().getName()); //This prints the name of the main thread
+       System.out.println(Thread.currentThread().getName()); //This prints the name of the main thread when the program first starts
        
        MyExtendedThread extendedThread1 = new MyExtendedThread(); //This creates a MyExtendedThread class object and names it extendedThread
        extendedThread1.start(); //This starts the extendedThread object
@@ -79,19 +79,21 @@ public class CIT360 {
        executorThread.shutdown(); //The executor service will keep listening for new tasks until it is explicitly shutdown
        
        
-       
+      // You can play with the sleep times below to see what happens. If you comment out the whole do/while you will see that main terminates before the other threads.
+      // Supposedly it is preferable to have main terminate last.
+      
       
        do {
           System.out.print(".");
           try {
-              Thread.sleep(100);
+              Thread.sleep(0);
           }
           catch (InterruptedException exc) {
               exc.printStackTrace();
           }
           
-          }while (extendedThread1.isAlive() || runnableThread.isAlive() || extendedThread2.isAlive());
-         
+          }while (extendedThread1.isAlive() || runnableThread.isAlive() || extendedThread2.isAlive()); //As long as these threads are running main will not terminate.
+        
        System.out.println("Main thread ending.");
     
     } 
