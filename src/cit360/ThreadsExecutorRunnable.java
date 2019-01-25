@@ -1,4 +1,4 @@
-package cit360;
+package CIT360;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
