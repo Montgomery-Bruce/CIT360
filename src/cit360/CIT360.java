@@ -64,9 +64,6 @@ public class CIT360 {
        Thread runnableThread = new Thread(runnableObject); //Now a thread called runnableThread is contstructed from the runnableObject
        runnableThread.start(); //Start execution of the thread
        
-       MyExtendedThread  extendedThread2 = new MyExtendedThread(); //Creates a 2nd extended thread
-       extendedThread2.start();
-       
        ExecutorService executorThread = Executors.newFixedThreadPool(3); //create the pool of threads
        Runnable ExecutorThread1 = new MyExecutorThread(); 
        Runnable ExecutorThread2 = new MyExecutorThread(); //Create 3 new objects of type MyExecutorThread class
@@ -92,7 +89,7 @@ public class CIT360 {
               exc.printStackTrace();
           }
           
-          }while (extendedThread1.isAlive() || runnableThread.isAlive() || extendedThread2.isAlive()); //As long as these threads are running main will not terminate.
+          }while (extendedThread1.isAlive() || runnableThread.isAlive()); //As long as these threads are running main will not terminate.
         
        System.out.println("Main thread ending.");
     
