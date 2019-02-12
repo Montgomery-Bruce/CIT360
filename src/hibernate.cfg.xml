@@ -19,5 +19,6 @@
     <property name="show_sql">true</property>
     <!-- Mapping to Data Object Class -->
     <mapping class="cit360.Hibernate.Students" file="" jar="" package="cit360.Hibernate" resource=""/>
+    <mapping class="cit360.Hibernate.Teachers" package="cit360.Hibernate"/>
   </session-factory>
 </hibernate-configuration>
