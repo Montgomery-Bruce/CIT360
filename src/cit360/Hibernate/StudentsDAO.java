@@ -56,6 +56,29 @@ public class StudentsDAO {
         }
 
     }
+    
+    public List<Teachers> getTeachers() {
+
+        try {
+            session = factory.openSession();
+            session.getTransaction().begin();
+            String sql = "from cit360.Hibernate.Teachers";
+            List<Teachers> tch = (List<Teachers>)session.createQuery(sql).getResultList();
+            session.getTransaction().commit();
+            return tch;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Rollback in case of an error occurred.
+            session.getTransaction().rollback();
+            return null;
+        } finally {
+            session.close();
+        }
+
+    }
+    
+    
 
     /** Used to get a single student from database */
     public Students getStudents(int id) {
@@ -67,6 +90,26 @@ public class StudentsDAO {
             Students s = (Students)session.createQuery(sql).getSingleResult();
             session.getTransaction().commit();
             return s;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Rollback in case of an error occurred.
+            session.getTransaction().rollback();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
+    
+       public Teachers getTeachers(int id) {
+
+        try {
+            session = factory.openSession();
+            session.getTransaction().begin();
+            String sql = "from cit360.Hibernate.Teachers where id=" + Integer.toString(id);
+            Teachers tch = (Teachers)session.createQuery(sql).getSingleResult();
+            session.getTransaction().commit();
+            return tch;
 
         } catch (Exception e) {
             e.printStackTrace();

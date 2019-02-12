@@ -17,8 +17,13 @@ public class RunHibernateExample {
         }
 
         System.out.println(t.getStudents(1));
+        System.out.println();
+        
+        List<Teachers> tch = t.getTeachers();
+        for (Teachers i : tch) {
+            System.out.println(i);
+        }
+        
+        System.out.println(t.getTeachers(2));
     }
 }
-/*
-Trying to figure out why this tyhing wont commit.
- */
