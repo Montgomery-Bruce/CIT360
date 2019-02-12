@@ -41,8 +41,7 @@ public class Students{
         this.id = id;
     }
 
-    public Students(Integer id, String firstName, String lastName, String phoneNumber) {
-        this.id = id;
+    public Students(String firstName, String lastName, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;

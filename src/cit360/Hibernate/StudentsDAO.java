@@ -10,7 +10,8 @@ import java.util.*;
 /** TestDAO implemented using a singleton pattern
  *  Used to get student data from my MYSQL database*/
 public class StudentsDAO {
-
+    
+    private Students stu;
     SessionFactory factory = null;
     Session session = null;
 
@@ -120,5 +121,14 @@ public class StudentsDAO {
             session.close();
         }
     }
+       public void addStudents(){
+           stu = new Students("John", "Doe", "678-999-0909");
+           session = factory.openSession();
+           session.beginTransaction();
+           session.save(stu);
+           session.getTransaction().commit();
+           session.close();
+       }
+
 
 }

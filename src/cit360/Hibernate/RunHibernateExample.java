@@ -25,5 +25,7 @@ public class RunHibernateExample {
         }
         
         System.out.println(t.getTeachers(2));
+        
+        t.addStudents();
     }
 }
