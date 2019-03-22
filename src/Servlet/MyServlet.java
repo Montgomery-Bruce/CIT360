@@ -34,7 +34,7 @@ public class MyServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<b>Welcome " + request.getParameter("name") + "!" + "</b><br>");
-            out.println("<b>Age " + request.getParameter("age") + "</b><br>");
+            out.println("<b>You are " + request.getParameter("age") + " years old." + "</b><br>");
             out.println("</body>");
             out.println("</html>");
         }
